@@ -1,0 +1,216 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: darkblue;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.main {
+    display: flex;
+    flex-grow: 1;
+    margin-top: 80px; /* Adjusting for header height */
+    height: calc(100% - 80px); /* Full height minus header */
+}
+
+.sidebar {
+    width: 500px; /* Set the sidebar width to 500px */
+    background-color: lightyellow;
+    padding: 15px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    height: 100%; /* Ensure it fills the remaining height */
+    display: flex;
+    flex-direction: column;
+}
+
+.search-bar {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.search-button {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-left: none; /* Removes border between input and button */
+    background-color: #f8f8f8;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+}
+
+.clear-button {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-left: none; /* Removes border between input and button */
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    margin-left: 10px;
+}
+
+.dropdown-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.dropdown-label {
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold; /* Make the label bold */
+}
+
+.dropdown-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    min-width: 150px;
+}
+
+.apply-filter-button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.plot-type-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.plot-button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.plot-button:hover {
+    background-color: #0056b3;
+}
+
+.generate-button {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+
+.generate-button:hover {
+    background-color: #218838;
+}
+
+.content {
+    display: flex;
+    flex-grow: 1;
+    background-color: skyblue; /* Same color as header */
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.plot {
+    flex: 3; /* Takes more space */
+    background-color: skyblue; /* Same color as header */
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat {
+    flex: 1; /* Takes less space */
+    background-color: lightgray; /* Lighter shade */
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto; /* Pushes the form to the bottom */
+}
+
+.upload-form input[type="file"] {
+    margin: 10px 0;
+}
+.kde-dropdown {
+    background-color: #f0f0f0; /* Light gray background */
+    color: #333; /* Dark text color */
+}
+
+.kde-dropdown option {
+    background-color: #ffffff; /* White background for options */
+    color: #000000; /* Black text for options */
+}
+/* Dropdown button styling */
+.dropdown-button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+/* Expandable dropdown content */
+.dropdown-content {
+    position: absolute;
+    background-color: #f8f8f8;
+    min-width: 160px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 10px;
+}
+
+/* Scrollable box styling */
+.scroll-box {
+    max-height: 150px; /* Set a fixed height for the box */
+    overflow-y: auto;  /* Enable vertical scrolling */
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSL Ground Truth Visualizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="header">RSL Ground Truth Visualizer</div>
+    <div class="main">
+        <div class="sidebar">
+            <!-- Search bar content -->
+            <form class="search-bar">
+                <input type="text" class="search-input" id="file-name" placeholder="Search..." readonly>
+                <button type="button" class="search-button" onclick="document.getElementById('file-input').click()">Browse</button>
+                <button type="button" class="clear-button" id="clear-button" onclick="clearFile()" style="display: none;">Clear</button>
+                <input type="file" id="file-input" accept=".csv" style="display: none;" onchange="handleFileSelect(event)">
+            </form>
+
+            <div class="filter-container">
+                <label for="filter-dropdown">Filter by:</label>
+                <select id="filter-dropdown" onchange="onFilterChange()" onclick="toggleFilterBox()">
+                    <!-- Options will be populated dynamically -->
+                </select>
+            
+                <!-- Scrollable filter values box -->
+                <div id="filter-values-container" class="scroll-box" style="display: none;">
+                    <!-- Checkboxes for unique values will be dynamically generated here -->
+                </div>
+            
+                <button type="button" class="apply-filter-button" style="display: none;" onclick="applyFilter()">Apply Filter</button>
+            </div>
+            
+
+            <!-- Plot type and plot form content -->
+            <div class="plot-type-buttons">
+                <button type="button" class="plot-button" onclick="showPlotForm('line')">Line</button>
+                <button type="button" class="plot-button" onclick="showPlotForm('scatter')">Scatter</button>
+                <button type="button" class="plot-button" onclick="showPlotForm('box')">Box</button>
+                <button type="button" class="plot-button" onclick="showPlotForm('hist')">Hist</button>
+                <button type="button" class="plot-button" onclick="showPlotForm('bar')">Bar</button>
+                <button type="button" class="plot-button" onclick="showPlotForm('spectral')">Spectral</button> <!-- New Spectral Button -->
+            </div>
+            
+            <div id="plot-form" class="plot-form">
+                <!-- Plot form will be generated here dynamically based on selected plot type -->
+            </div>
+        </div>
+
+        <!-- Plot display area -->
+        <div class="content">
+            <div class="plot">
+                <img id="plot-image" src="" alt="Plot will be displayed here." style="max-width: 100%; padding: 10px;">
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
